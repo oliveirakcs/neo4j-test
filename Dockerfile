@@ -1,5 +1,5 @@
 # Use a imagem compatível com o Railway
-FROM railwayapp/python:3.11
+FROM python:3.11
 
 # Defina o diretório de trabalho
 WORKDIR /app
