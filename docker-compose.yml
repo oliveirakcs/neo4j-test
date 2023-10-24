@@ -3,13 +3,5 @@ services:
   neo4j:
     container_name: neo4j
     image: neo4j:latest
-    ports:
-      - "7687:7687"  # Expose port for Neo4j Bolt protocol
-      - "7474:7474"  # Expose port for Neo4j HTTP interface
     environment:
-      - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}  # Set Neo4j authentication credentials
-    healthcheck:
-      test: ["CMD", "cypher-shell", "--user", "${NEO4J_USERNAME}", "--password", "${NEO4J_PASSWORD}", "--format", "plain", "--execute", "RETURN 1"]
-      interval: 5s
-      timeout: 10s
-      retries: 5
+      - NEO4J_AUTH=${NEO4J_USERNAME}/${NEO4J_PASSWORD}
